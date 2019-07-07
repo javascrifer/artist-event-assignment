@@ -6,7 +6,9 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import { useDebounce } from 'use-debounce';
 
+import ArtistCard from '../../components/ArtistCard/ArtistCard';
 import Input from '../../components/Input/Input';
 import { Artist } from '../../shared/artist';
 import { getArtist } from '../../shared/artist.service';
@@ -15,6 +17,7 @@ import './ArtistSearch.scss';
 const ArtistSearch: FC = () => {
   const [artistsName, setArtistsName] = useState<string>('');
   const [artist, setArtist] = useState<Artist | null>(null);
+  const [_artistName] = useDebounce(artistsName, 500);
   const onArtistNameChange = useCallback(
     ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
       setArtistsName(value);
@@ -23,14 +26,14 @@ const ArtistSearch: FC = () => {
   );
 
   useEffect(() => {
-    if (artistsName.length) {
+    if (_artistName.length) {
       (async () => {
-        setArtist(await getArtist(artistsName));
+        setArtist(await getArtist(_artistName));
       })();
     } else {
       setArtist(null);
     }
-  }, [artistsName]);
+  }, [_artistName]);
 
   useEffect(() => {
     console.log(artist);
@@ -39,14 +42,14 @@ const ArtistSearch: FC = () => {
   return (
     <Fragment>
       <h1 className="Title">Find your artist</h1>
-      <div className="InputContainer">
+      <div className="Container">
         <Input
           placeholder="Type artists name..."
           value={artistsName}
           onChange={onArtistNameChange}
         />
+        {artist ? <ArtistCard {...(artist as Artist)} /> : null}
       </div>
-      <div>{JSON.stringify(artist)}</div>
     </Fragment>
   );
 };
