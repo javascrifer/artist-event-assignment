@@ -1,0 +1,33 @@
+.Nav {
+  background: #343a40;
+  padding: 5px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 5px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    height: 65px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 350px;
+    }
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+
+    @media (min-width: 768px) {
+      padding: 25px;
+    }
+
+    .Logo {
+      width: 50px;
+    }
+  }
+}

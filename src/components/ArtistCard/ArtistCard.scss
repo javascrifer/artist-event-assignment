@@ -12,15 +12,23 @@
   }
 
   .Image {
-    flex-basis: 320px;
-    height: 300px;
+    flex-basis: 100%;
     display: flex;
-    padding-right: 20px;
+
+    @media (min-width: 768px) {
+      flex-basis: 320px;
+      height: 300px;
+      padding-right: 20px;
+    }
 
     img {
-      width: 300px;
+      width: 100%;
       height: auto;
       border-radius: 5px;
+
+      @media (min-width: 768px) {
+        width: 300px;
+      }
     }
   }
 
@@ -38,12 +46,17 @@
     .ArtistInfo {
       p {
         margin-top: 0;
-        font-size: 25px;
+        font-size: 20px;
         text-align: left;
+
+        @media (min-width: 768px) {
+          font-size: 25px;
+        }
 
         &.UpcomingEvents {
           display: flex;
           align-items: center;
+          flex-wrap: wrap;
 
           & * {
             padding-left: 5px;
