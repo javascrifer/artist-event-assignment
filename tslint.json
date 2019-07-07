@@ -40,7 +40,6 @@
     "jsdoc-format": true,
     "jsx-no-lambda": false,
     "jsx-no-multiline-js": false,
-    "react/jsx-boolean-value": true,
     "label-position": true,
     "max-line-length": [true, 120],
     "member-ordering": false,
