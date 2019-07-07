@@ -1,4 +1,5 @@
 import React, { FC, memo } from 'react';
+import { Link } from 'react-router-dom';
 
 import calendarIcon from '../../assets/calendar.svg';
 import facebookIcon from '../../assets/facebook.svg';
@@ -13,6 +14,8 @@ const ArtistCard: FC<Artist> = ({
   facebook_page_url,
   upcoming_event_count,
 }) => {
+  const artistViewPath = `/${encodeURIComponent(name)}`;
+
   return (
     <div className="ArtistCard">
       <div className="Image">
@@ -34,10 +37,10 @@ const ArtistCard: FC<Artist> = ({
               <img src={facebookIcon} alt="Facebook icon" />
             </a>
           ) : null}
-          <a className="Preview" href="#">
+          <Link className="Preview" to={artistViewPath}>
             <span>Preview</span>
             <img src={rightArrowIcon} alt="Right arrow icon" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
