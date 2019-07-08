@@ -1,13 +1,12 @@
+@import '../../scss/variables';
+
 .ArtistCard {
+  @include card;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  margin-top: 50px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-top: $spacing-lg;
 
-  @media (min-width: 768px) {
+  @media (min-width: $desktop-min-width) {
     flex-direction: row;
   }
 
@@ -15,19 +14,19 @@
     flex-basis: 100%;
     display: flex;
 
-    @media (min-width: 768px) {
-      flex-basis: 320px;
-      height: 300px;
-      padding-right: 20px;
+    @media (min-width: $desktop-min-width) {
+      flex-basis: $img-mobile-width + $spacing-md;
+      height: $img-mobile-width;
+      padding-right: $spacing-md;
     }
 
     img {
       width: 100%;
       height: auto;
-      border-radius: 5px;
+      border-radius: $default-border-radius;
 
-      @media (min-width: 768px) {
-        width: 300px;
+      @media (min-width: $desktop-min-width) {
+        width: $img-mobile-width;
       }
     }
   }
@@ -37,19 +36,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 20px;
+    padding-top: $spacing-md;
 
-    @media (min-width: 768px) {
+    @media (min-width: $desktop-min-width) {
       padding-top: 0;
     }
 
     .ArtistInfo {
       p {
         margin-top: 0;
-        font-size: 20px;
+        font-size: $title-fz-sm;
         text-align: left;
 
-        @media (min-width: 768px) {
+        @media (min-width: $desktop-min-width) {
           font-size: 25px;
         }
 
@@ -59,7 +58,7 @@
           flex-wrap: wrap;
 
           & * {
-            padding-left: 5px;
+            padding-left: $spacing-xs;
           }
 
           img {
@@ -72,13 +71,12 @@
     .Actions {
       display: flex;
       justify-content: space-between;
-      border-top: 1px solid #dfdfdf;
-      padding-top: 5px;
+      border-top: 1px solid $light-grey;
+      padding-top: $spacing-xs;
 
       .Facebook {
+        @include icon;
         display: inline-block;
-        width: 48px;
-        height: 48px;
       }
 
       .Preview {
@@ -86,11 +84,11 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        color: #029be5;
+        color: $primary-color;
         text-decoration: none;
 
         img {
-          width: 48px;
+          @include icon;
         }
       }
     }

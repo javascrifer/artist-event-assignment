@@ -1,9 +1,13 @@
+@import '../../scss/variables';
+
+$preloader-size: 64px;
+
 .Preloader {
   display: block;
   position: relative;
-  margin: 50px auto;
-  width: 64px;
-  height: 64px;
+  margin: $spacing-lg auto;
+  width: $preloader-size;
+  height: $preloader-size;
 
   div {
     position: absolute;
@@ -11,7 +15,7 @@
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: #029be5;
+    background: $primary-color;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
 
     &:nth-child(1) {

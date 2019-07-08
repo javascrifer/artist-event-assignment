@@ -1,18 +1,20 @@
+@import '../../scss/variables';
+
 .ArtistTitle {
-  margin-top: 50px;
+  margin-top: $spacing-lg;
 
   .Image {
     width: 100%;
     height: auto;
     border-radius: 50%;
 
-    @media (min-width: 375px) {
-      width: 300px;
+    @media (min-width: $tablet-min-width) {
+      width: $img-mobile-width;
     }
   }
 
   .ArtistName {
     margin-top: 0;
-    font-size: 50px;
+    font-size: $title-fz-lg;
   }
 }

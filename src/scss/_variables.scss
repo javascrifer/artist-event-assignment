@@ -1,0 +1,35 @@
+$light-black: #343a40;
+$light-grey: #dfdfdf;
+$white: #fff;
+$primary-color: #029be5;
+
+$desktop-min-width: 768px;
+$tablet-min-width: 375px;
+
+$img-mobile-width: 300px;
+
+$spacing-lg: 50px;
+$spacing-md: 20px;
+$spacing-sm: 10px;
+$spacing-xs: 5px;
+
+$title-fz-lg: 50px;
+$title-fz-md: 30px;
+$title-fz-sm: 20px;
+
+$default-fz: 16px;
+$default-border: 2px solid $light-grey;
+$default-border-radius: 5px;
+$default-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+@mixin card {
+  padding: $spacing-md;
+  background: $white;
+  box-shadow: $default-box-shadow;
+  border-radius: $default-border-radius;
+}
+
+@mixin icon {
+  width: 48px;
+  height: 48px;
+}

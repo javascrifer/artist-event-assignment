@@ -1,11 +1,9 @@
-.Nav {
-  background: #343a40;
-  padding: 5px;
-  text-align: center;
+@import '../../scss/variables';
 
-  @media (min-width: 768px) {
-    padding: 5px;
-  }
+.Nav {
+  background: $light-black;
+  padding: $spacing-xs;
+  text-align: center;
 
   a {
     display: flex;
@@ -14,17 +12,13 @@
     margin: 0 auto;
     height: 65px;
     width: 100%;
-
-    @media (min-width: 768px) {
-      width: 350px;
-    }
-
-    color: #fff;
+    color: $white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: $title-fz-sm;
 
-    @media (min-width: 768px) {
-      padding: 25px;
+    @media (min-width: $desktop-min-width) {
+      width: 350px;
+      padding: $spacing-md;
     }
 
     .Logo {

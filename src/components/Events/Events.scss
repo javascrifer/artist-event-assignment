@@ -1,19 +1,22 @@
+@import '../../scss/variables';
+
 .Events {
   .Event {
+    @include card;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    margin: 20px 0;
-    background: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    margin: $spacing-md 0;
 
     .Description {
-      font-size: 20px;
       margin-top: 0;
-      padding-bottom: 20px;
+      padding-bottom: $spacing-md;
+      font-size: $default-fz;
       text-align: justify;
-      border-bottom: 1px solid #dfdfdf;
+      border-bottom: 1px solid $light-grey;
+
+      @media (min-width: $desktop-min-width) {
+        font-size: $title-fz-sm;
+      }
     }
 
     .Details {
@@ -22,26 +25,30 @@
         align-items: center;
         flex-wrap: wrap;
         margin-top: 0;
+        font-size: $default-fz;
         text-align: left;
+
+        @media (min-width: $desktop-min-width) {
+          font-size: $title-fz-sm;
+        }
 
         &:last-child {
           margin-bottom: 0;
         }
 
         img {
-          width: 48px;
-          height: 48px;
+          @include icon;
         }
 
         span {
-          padding-left: 10px;
+          padding-left: $spacing-sm;
         }
       }
     }
   }
 
   .Notice {
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: $spacing-md;
+    font-size: $title-fz-sm;
   }
 }
