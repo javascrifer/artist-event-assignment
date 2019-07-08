@@ -1,0 +1,28 @@
+.EventFiltersTitle {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.EventFilters {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    flex-basis: 30%;
+    padding: 20px;
+    font-size: 16px;
+    background: #fff;
+    border: 2px solid #dfdfdf;
+    border-radius: 5px;
+    transition: background-color 500ms;
+
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+
+    &.active {
+      background-color: #dfdfdf;
+    }
+  }
+}

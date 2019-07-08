@@ -1,0 +1,47 @@
+.Events {
+  .Event {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px 0;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    .Description {
+      font-size: 20px;
+      margin-top: 0;
+      padding-bottom: 20px;
+      text-align: justify;
+      border-bottom: 1px solid #dfdfdf;
+    }
+
+    .Details {
+      p {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 0;
+        text-align: left;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 48px;
+          height: 48px;
+        }
+
+        span {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  .Notice {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}

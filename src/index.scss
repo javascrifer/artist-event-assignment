@@ -15,3 +15,14 @@ body * {
   box-sizing: border-box;
   position: relative;
 }
+
+.Container {
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (min-width: 840px) {
+    padding: 0;
+  }
+}

@@ -35,10 +35,6 @@ const ArtistSearch: FC = () => {
     }
   }, [_artistName]);
 
-  useEffect(() => {
-    console.log(artist);
-  }, [artist]);
-
   return (
     <Fragment>
       <h1 className="Title">Find your artist</h1>
