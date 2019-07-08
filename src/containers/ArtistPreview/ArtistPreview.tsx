@@ -44,7 +44,7 @@ const ArtistPreview: FC<RouteComponentProps<ArtistRouteParams>> = ({
 
   return artist ? (
     <div className="Container">
-      <ArtistTitle name={artist.name} imageSrc={artist.image_url} />
+      <ArtistTitle name={artist.name} imageSrc={artist.thumb_url} />
       <EventFilters eventDate={eventDate} onClick={onEventFilterClick} />
       {isLoading ? <Preloader /> : <Events events={events} />}
     </div>
