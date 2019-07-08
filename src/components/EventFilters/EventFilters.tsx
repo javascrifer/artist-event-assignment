@@ -15,15 +15,15 @@ const EventFilters: FC<EventFiltersProps> = ({ eventDate, onClick }) => {
     <Fragment>
       <h4 className="EventFiltersTitle">Choose event date</h4>
       <div className="EventFilters">
-        {filters.map(([key, value]) => (
+        {filters.map(([name, value]) => (
           <button
             type="button"
-            key={key}
+            key={value}
             className={eventDate === value ? 'active' : ''}
             data-value={value}
             onClick={onClick}
           >
-            {key}
+            {name}
           </button>
         ))}
       </div>
