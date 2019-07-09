@@ -2,12 +2,14 @@
   "name": "artist-event-assignment",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nikas-lebedenko.github.io/artist-event-assignment",
   "dependencies": {
     "@types/jest": "24.0.15",
     "@types/node": "12.0.12",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "^4.3.4",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -36,7 +38,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "tslint src/**/*.ts{,x} --project tsconfig.json"
+    "lint": "tslint src/**/*.ts{,x} --project tsconfig.json",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
