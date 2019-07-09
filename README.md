@@ -13,4 +13,4 @@ You will also see any lint errors in the console.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br>
-**Note: unit test contain console.error output due to usage of hooks.**
+**Note: unit tests contains console.error output due to usage of hooks.**
