@@ -11,7 +11,7 @@ import { useDebounce } from 'use-debounce';
 import ArtistCard from '../../components/ArtistCard/ArtistCard';
 import Input from '../../components/Input/Input';
 import { Artist } from '../../shared/artist';
-import { getArtist } from '../../shared/artist.service';
+import { getArtist } from '../../shared/helpers';
 import './ArtistSearch.scss';
 
 const ArtistSearch: FC = () => {

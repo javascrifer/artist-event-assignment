@@ -1,5 +1,7 @@
-import { Artist } from './artist';
-import { EventDate } from './event-date.enum';
+import { Artist } from '../artist';
+import { Event } from '../event';
+import { EventDate } from '../event-date.enum';
+import { call } from './api';
 
 const url = 'https://rest.bandsintown.com';
 const appId = process.env.REACT_APP_APP_ID;
@@ -10,22 +12,20 @@ const appId = process.env.REACT_APP_APP_ID;
  * Furthermore, some times API returns ""
  */
 export const getArtist = async (artistName: string): Promise<Artist | null> => {
-  const response = await fetch(
+  const json = await call<Artist>(
     `${url}/artists/${encodeURIComponent(artistName)}?app_id=${appId}`,
   );
-  const responseJson = await response.json();
 
-  return !responseJson || !!responseJson.error ? null : responseJson;
+  return !json || !!(json as any).error ? null : json;
 };
 
 export const getEvents = async (
   artistName: string,
   date: EventDate,
-): Promise<any[]> => {
+): Promise<Event[]> => {
   const queryParams = `app_id=${appId}&date=${date}`;
-  const response = await fetch(
+
+  return call<Event[]>(
     `${url}/artists/${encodeURIComponent(artistName)}/events?${queryParams}`,
   );
-
-  return response.json();
 };

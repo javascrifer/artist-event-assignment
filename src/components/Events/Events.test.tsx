@@ -2,8 +2,8 @@ import { configure, shallow, ShallowWrapper } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 
-import { toDateTimeString } from '../../shared/date.service';
 import { Event } from '../../shared/event';
+import { toDateTimeString } from '../../shared/helpers';
 import Events from './Events';
 
 configure({

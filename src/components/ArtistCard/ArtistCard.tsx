@@ -14,7 +14,7 @@ const ArtistCard: FC<Artist> = ({
   facebook_page_url,
   upcoming_event_count,
 }) => {
-  const artistViewPath = `/${encodeURIComponent(name.toLocaleLowerCase())}`;
+  const artistViewPath = `/${encodeURIComponent(name.toLocaleLowerCase())}/`;
 
   return (
     <div className="ArtistCard">

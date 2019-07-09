@@ -2,8 +2,8 @@ import React, { FC, memo } from 'react';
 
 import dateIcon from '../../assets/date.png';
 import locationIcon from '../../assets/location.png';
-import { toDateTimeString } from '../../shared/date.service';
 import { EventsProps } from '../../shared/events-props';
+import { toDateTimeString } from '../../shared/helpers';
 import './Events.scss';
 
 const Events: FC<EventsProps> = ({ events }) => {

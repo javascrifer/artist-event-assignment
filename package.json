@@ -53,6 +53,16 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "src/shared/helpers/*.ts",
+      "!src/shared/helpers/api.ts",
+      "!src/shared/helpers/index.ts",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/path/to/dir/"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint",

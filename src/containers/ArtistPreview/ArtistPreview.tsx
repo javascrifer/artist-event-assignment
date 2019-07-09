@@ -7,8 +7,8 @@ import Events from '../../components/Events/Events';
 import Preloader from '../../components/Preloader/Preloader';
 import { Artist } from '../../shared/artist';
 import { ArtistRouteParams } from '../../shared/artist-route-params';
-import { getArtist, getEvents } from '../../shared/artist.service';
 import { EventDate } from '../../shared/event-date.enum';
+import { getArtist, getEvents } from '../../shared/helpers';
 
 const ArtistPreview: FC<RouteComponentProps<ArtistRouteParams>> = ({
   match: {
