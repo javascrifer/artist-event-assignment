@@ -5,16 +5,17 @@ import calendarIcon from '../../assets/calendar.svg';
 import facebookIcon from '../../assets/facebook.svg';
 import rightArrowIcon from '../../assets/right-arrow.svg';
 
-import { Artist } from '../../shared/artist';
+import { ArtistCardProps } from '../../shared/artist-card-props';
 import './ArtistCard.scss';
 
-const ArtistCard: FC<Artist> = ({
+const ArtistCard: FC<ArtistCardProps> = ({
+  artistName,
   name,
   thumb_url,
   facebook_page_url,
   upcoming_event_count,
 }) => {
-  const artistViewPath = `/${encodeURIComponent(name.toLocaleLowerCase())}/`;
+  const artistViewPath = `/${encodeURIComponent(artistName)}/`;
 
   return (
     <div className="ArtistCard">

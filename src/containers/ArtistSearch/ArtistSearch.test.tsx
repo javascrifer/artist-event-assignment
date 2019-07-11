@@ -6,6 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 import ArtistCard from '../../components/ArtistCard/ArtistCard';
 import Input from '../../components/Input/Input';
 import { Artist } from '../../shared/artist';
+import { ArtistCardProps } from '../../shared/artist-card-props';
 import * as helpers from '../../shared/helpers/artist';
 import ArtistSearch from './ArtistSearch';
 
@@ -81,7 +82,7 @@ describe('<ArtistSearch />', () => {
       .find(Input)
       .find('input')
       .first();
-    let artistCard: ReactWrapper<Artist>;
+    let artistCard: ReactWrapper<ArtistCardProps>;
 
     // WHEN
     input.simulate('change', { target: { value: 'John' } });
@@ -94,6 +95,6 @@ describe('<ArtistSearch />', () => {
     expect(getArtistSpy).toHaveBeenCalledTimes(1);
     expect(getArtistSpy).toHaveBeenCalledWith('John');
     expect(artistCard).toHaveLength(1);
-    expect(artistCard.props()).toEqual(artist);
+    expect(artistCard.props()).toEqual({ ...artist, artistName: 'John' });
   });
 });

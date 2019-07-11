@@ -16,6 +16,7 @@ describe('<Events />', () => {
       datetime: '2013-07-21T16:30:00',
       description: 'event-description',
       id: 1,
+      lineup: [],
       venue: {
         city: 'venue-city-1',
         country: 'venue-country-1',
@@ -25,6 +26,7 @@ describe('<Events />', () => {
     {
       datetime: '2014-01-14T20:00:00',
       id: 2,
+      lineup: [],
       venue: {
         city: 'venue-city-2',
         country: 'venue-country-2',

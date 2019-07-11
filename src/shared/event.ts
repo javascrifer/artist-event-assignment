@@ -5,4 +5,5 @@ export interface Event {
   datetime: string;
   description?: string;
   venue: Venue;
+  lineup: string[];
 }

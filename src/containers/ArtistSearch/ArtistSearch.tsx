@@ -44,7 +44,9 @@ const ArtistSearch: FC = () => {
           value={artistsName}
           onChange={onArtistNameChange}
         />
-        {artist ? <ArtistCard {...(artist as Artist)} /> : null}
+        {artist ? (
+          <ArtistCard {...(artist as Artist)} artistName={artistsName} />
+        ) : null}
       </div>
     </Fragment>
   );
