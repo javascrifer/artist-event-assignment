@@ -30,26 +30,37 @@ const _getEvents = async (
   );
 };
 
+export const getArtistCacheKey = () => 'artist';
+
+export const isArtistCacheValid = (artist: Artist | null, artistName: string) =>
+  !!artist && artist.name.toLowerCase() === artistName.toLowerCase();
+
+export const isArtistCacheNeeded = (artist: Artist | null) => !!artist;
+
 export const getArtist = cacheDecorator<Artist | null>(
   _getArtist,
-  () => 'artist',
-  (artist: Artist | null, artistName: string) => {
-    return !!artist && artist.name.toLowerCase() === artistName.toLowerCase();
-  },
-  (artist: Artist | null) => !!artist,
+  getArtistCacheKey,
+  isArtistCacheValid,
+  isArtistCacheNeeded,
 );
+
+export const getEventsCacheKey = (_: string, date: string) => `events-${date}`;
+
+export const isEventsCacheValid = (events: Event[], artistName: string) => {
+  return (
+    !!events &&
+    !!events.length &&
+    !!events[0].lineup.find(
+      _artistName => artistName.toLowerCase() === _artistName.toLowerCase(),
+    )
+  );
+};
+
+export const isEventsCacheNeeded = (events: Event[]) => !!events.length;
 
 export const getEvents = cacheDecorator<Event[]>(
   _getEvents,
-  (_: string, date: string) => `events-${date}`,
-  (events: Event[], artistName: string) => {
-    return (
-      !!events &&
-      !!events.length &&
-      !!events[0].lineup.find(
-        _artistName => artistName.toLowerCase() === _artistName.toLowerCase(),
-      )
-    );
-  },
-  (events: Event[]) => !!events.length,
+  getEventsCacheKey,
+  isEventsCacheValid,
+  isEventsCacheNeeded,
 );
