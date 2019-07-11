@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5ba8802f30c1332a88b9ae4bc7349916",
+    "revision": "73a3510d32d5164a2e876d60ab76c96d",
     "url": "/artist-event-assignment/index.html"
   },
   {
-    "revision": "4e42b189af772af26268",
+    "revision": "7a00e4c4b9192f3867e8",
     "url": "/artist-event-assignment/static/css/3.a16f8439.chunk.css"
   },
   {
-    "revision": "41a5edbd1ce73040b133",
+    "revision": "c4be904a8ee85d005ecc",
     "url": "/artist-event-assignment/static/css/main.08c0ffc1.chunk.css"
   },
   {
-    "revision": "04ad008a871a482bbb84",
-    "url": "/artist-event-assignment/static/js/2.49138548.chunk.js"
+    "revision": "a15c7ff4fa421c5f6854",
+    "url": "/artist-event-assignment/static/js/2.aedb7d8a.chunk.js"
   },
   {
-    "revision": "4e42b189af772af26268",
-    "url": "/artist-event-assignment/static/js/3.f8aa5c98.chunk.js"
+    "revision": "7a00e4c4b9192f3867e8",
+    "url": "/artist-event-assignment/static/js/3.108fbd0c.chunk.js"
   },
   {
-    "revision": "41a5edbd1ce73040b133",
-    "url": "/artist-event-assignment/static/js/main.5b32920c.chunk.js"
+    "revision": "c4be904a8ee85d005ecc",
+    "url": "/artist-event-assignment/static/js/main.d749dc00.chunk.js"
   },
   {
-    "revision": "32023667708cd44c273f",
-    "url": "/artist-event-assignment/static/js/runtime~main.7bd16a22.js"
+    "revision": "4e1beb788d38438a4508",
+    "url": "/artist-event-assignment/static/js/runtime~main.bb7ecfa6.js"
   },
   {
     "revision": "105a65c1991479f00db94bb79a2657a8",
