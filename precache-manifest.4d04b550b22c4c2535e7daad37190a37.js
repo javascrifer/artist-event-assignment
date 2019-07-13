@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ce9aa81929e4da828781606afd0b9cb9",
+    "revision": "d9add7ef549678440465061ba5a5a14e",
     "url": "/artist-event-assignment/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/artist-event-assignment/static/css/3.a16f8439.chunk.css"
   },
   {
-    "revision": "fe5a7bf00b22f6b1d120",
+    "revision": "3a160139e78001bd300a",
     "url": "/artist-event-assignment/static/css/main.08c0ffc1.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/artist-event-assignment/static/js/3.108fbd0c.chunk.js"
   },
   {
-    "revision": "fe5a7bf00b22f6b1d120",
-    "url": "/artist-event-assignment/static/js/main.8ad39dbc.chunk.js"
+    "revision": "3a160139e78001bd300a",
+    "url": "/artist-event-assignment/static/js/main.8c32302c.chunk.js"
   },
   {
     "revision": "4e1beb788d38438a4508",
