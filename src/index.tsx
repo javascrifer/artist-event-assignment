@@ -7,7 +7,7 @@ import './index.scss';
 import * as serviceWorker from './serviceWorker';
 
 const Index = (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.REACT_APP_ROUTER_BASENAME}>
     <App />
   </BrowserRouter>
 );

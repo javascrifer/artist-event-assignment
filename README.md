@@ -24,4 +24,3 @@ Cache is implemented using local storage. I'm not a fan of pushing information t
 ### Deploy
 
 Application is deployed to GitHub Pages. You can reach it at [https://nikas-lebedenko.github.io/artist-event-assignment](https://nikas-lebedenko.github.io/artist-event-assignment).
-_Note: GitHub Pages does not allow routing, so if you will refresh application in artist preview window it will return 404. Despite that, you can freely navigate in application because it uses browser routing._
