@@ -6,7 +6,6 @@ import { MemoryRouter } from 'react-router-dom';
 import ArtistCard from '../../components/ArtistCard/ArtistCard';
 import Input from '../../components/Input/Input';
 import { Artist } from '../../shared/artist';
-import { ArtistCardProps } from '../../shared/artist-card-props';
 import * as helpers from '../../shared/helpers/artist';
 import ArtistSearch from './ArtistSearch';
 
@@ -30,6 +29,7 @@ describe('<ArtistSearch />', () => {
   };
 
   let getArtistSpy: jest.SpyInstance;
+  let getDefaultArtistSpy: jest.SpyInstance;
   let wrapper: ReactWrapper;
 
   beforeEach(() => {
@@ -41,12 +41,15 @@ describe('<ArtistSearch />', () => {
 
     getArtistSpy = jest.spyOn(helpers, 'getArtist');
     getArtistSpy.mockImplementation(() => artist);
+    getDefaultArtistSpy = jest.spyOn(helpers, 'getDefaultArtist');
+    getDefaultArtistSpy.mockImplementation(() => artist);
 
     wrapper = mount(component);
   });
 
   afterEach(() => {
     getArtistSpy.mockClear();
+    getDefaultArtistSpy.mockClear();
   });
 
   test('should render a title', () => {
@@ -68,12 +71,18 @@ describe('<ArtistSearch />', () => {
     expect(input.prop('value')).toBe('');
   });
 
-  test('should not render artist card if artist is not found', () => {
+  test('should preload author from cache', async () => {
     // GIVEN
-    const artistCard = wrapper.find(ArtistCard);
+    let artistCard: ReactWrapper<Artist>;
+
+    // WHEN
+    await wrapper.update();
+    artistCard = wrapper.find(ArtistCard);
 
     // THEN
-    expect(artistCard).toHaveLength(0);
+    expect(getDefaultArtistSpy).toHaveBeenCalledTimes(1);
+    expect(artistCard).toHaveLength(1);
+    expect(artistCard.props()).toEqual(artist);
   });
 
   test('should request for artist and render it on input change', async () => {
@@ -82,7 +91,7 @@ describe('<ArtistSearch />', () => {
       .find(Input)
       .find('input')
       .first();
-    let artistCard: ReactWrapper<ArtistCardProps>;
+    let artistCard: ReactWrapper<Artist>;
 
     // WHEN
     input.simulate('change', { target: { value: 'John' } });
@@ -95,6 +104,6 @@ describe('<ArtistSearch />', () => {
     expect(getArtistSpy).toHaveBeenCalledTimes(1);
     expect(getArtistSpy).toHaveBeenCalledWith('John');
     expect(artistCard).toHaveLength(1);
-    expect(artistCard.props()).toEqual({ ...artist, artistName: 'John' });
+    expect(artistCard.props()).toEqual(artist);
   });
 });

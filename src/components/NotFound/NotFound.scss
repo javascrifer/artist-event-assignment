@@ -1,0 +1,14 @@
+@import '../../scss/variables';
+
+.NotFound {
+  margin-top: $spacing-lg;
+
+  .Image {
+    @include large-icon;
+  }
+
+  .Message {
+    margin-top: 0;
+    font-size: $title-fz-md;
+  }
+}

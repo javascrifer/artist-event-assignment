@@ -1,7 +1,7 @@
 import { Artist } from '../artist';
 import { Event } from '../event';
 import { call } from './api';
-import { cacheDecorator } from './cache';
+import { cacheDecorator, getItem } from './cache';
 
 const url = 'https://rest.bandsintown.com';
 const appId = process.env.REACT_APP_APP_ID;
@@ -43,6 +43,9 @@ export const getArtist = cacheDecorator<Artist | null>(
   isArtistCacheValid,
   isArtistCacheNeeded,
 );
+
+export const getDefaultArtist = (): Artist | null =>
+  getItem<Artist | null>(getArtistCacheKey(), null);
 
 export const getEventsCacheKey = (_: string, date: string) => `events-${date}`;
 

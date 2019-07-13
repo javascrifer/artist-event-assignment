@@ -1,24 +1,24 @@
 import { Artist } from '../artist';
-import { cacheDecorator } from './cache';
+import { cacheDecorator, getItem } from './cache';
 
 Object.defineProperty(window, 'localStorage', {
   value: { setItem: jest.fn(), getItem: jest.fn() },
 });
 
 describe('helpers/cache', () => {
-  describe('cacheDecorator', () => {
-    const artist: Artist = {
-      facebook_page_url: 'facebook-url',
-      id: 1,
-      image_url: 'image-url',
-      mbid: 1,
-      name: 'John Doe',
-      thumb_url: 'thumb-url',
-      tracker_count: 5,
-      upcoming_event_count: 10,
-      url: 'url',
-    };
+  const artist: Artist = {
+    facebook_page_url: 'facebook-url',
+    id: 1,
+    image_url: 'image-url',
+    mbid: 1,
+    name: 'John Doe',
+    thumb_url: 'thumb-url',
+    tracker_count: 5,
+    upcoming_event_count: 10,
+    url: 'url',
+  };
 
+  describe('cacheDecorator', () => {
     const wrapperFn = jest.fn(async () => artist);
     const keyFn = jest.fn(() => `cache-key`);
     const compareFn = jest.fn(() => true);
@@ -86,6 +86,38 @@ describe('helpers/cache', () => {
         `cache-key`,
         JSON.stringify(_artist),
       );
+    });
+  });
+
+  describe('getItem', () => {
+    let getItemSpy: jest.SpyInstance;
+
+    beforeEach(() => {
+      getItemSpy = jest.spyOn(localStorage, 'getItem');
+    });
+
+    afterEach(() => {
+      getItemSpy.mockClear();
+    });
+
+    test('should return parsed value from local storage', () => {
+      // WHEN
+      getItemSpy.mockImplementationOnce(() => JSON.stringify(artist));
+      const _artist = getItem<Artist | null>('artist', null);
+
+      // THEN
+      expect(getItemSpy).toHaveBeenCalledTimes(1);
+      expect(getItemSpy).toHaveBeenCalledWith('artist');
+      expect(_artist).toEqual(artist);
+    });
+
+    test('should return default value if item is not stored in local storage', () => {
+      // WHEN
+      getItemSpy.mockImplementationOnce(() => null);
+      const _artist = getItem<Artist | null>('artist', null);
+
+      // THEN
+      expect(_artist).toBe(null);
     });
   });
 });

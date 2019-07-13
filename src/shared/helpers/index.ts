@@ -1,2 +1,2 @@
-export { getArtist, getEvents } from './artist';
+export { getArtist, getDefaultArtist, getEvents } from './artist';
 export { toDateTimeString } from './date';

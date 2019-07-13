@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
 import './Preloader.scss';
 
@@ -11,4 +11,4 @@ const Preloader: FC = () => (
   </div>
 );
 
-export default Preloader;
+export default memo(Preloader);

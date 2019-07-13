@@ -25,7 +25,7 @@ describe('<ArtistCard />', () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<ArtistCard {...artist} artistName="John" />);
+    wrapper = shallow(<ArtistCard {...artist} />);
   });
 
   test('should render artist thumb image', () => {
@@ -90,6 +90,6 @@ describe('<ArtistCard />', () => {
 
     // THEN
     expect(link).toHaveLength(1);
-    expect(link.prop('to')).toBe('/John/');
+    expect(link.prop('to')).toBe('/john%20doe/');
   });
 });

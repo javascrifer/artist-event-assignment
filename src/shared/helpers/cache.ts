@@ -22,3 +22,8 @@ export const cacheDecorator = <T>(
     return wrapperResponse;
   };
 };
+
+export const getItem = <T>(key: string, defaultValue: T): T => {
+  const item = localStorage.getItem(key);
+  return !!item ? JSON.parse(item) : defaultValue;
+};
